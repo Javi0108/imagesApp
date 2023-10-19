@@ -16,12 +16,12 @@
 <body>
     <h2>Nginx + ngx_small_light</h2>
     <div class="formDiv">
-        <div class="tamano"><label for="tamano">Tamaño: </label><input type="text" name="tamano" class="tamanoText"><br><br></div>
-        <div class="ancho"><label for="ancho">Ancho del borde: </label><input type="text" name="ancho" class="anchoText"><br><br></div>
-        <div class="color"><label for="color">Color del borde: </label><input type="text" name="color" class="colorText"><br><br></div>
-        <div class="enfoque"><label for="enfoque">Enfoque: </label><input type="text" name="enfoque" class="enfoqueText"><br><br></div>
-        <div class="desenfoque"><label for="desenfoque">Desenfoque: </label><input type="text" name="desenfoque" class="desenfoqueText">
-        <button class="button">Generar</button></div>
+        <div><label for="tamano">Tamaño: </label><input type="text" name="tamano" id="tamanoText">
+        <div><label for="ancho">Ancho del borde: </label><input type="text" name="ancho" id="anchoText">
+        <div><label for="color">Color del borde: </label><input type="text" name="color" id="colorText">
+        <div><label for="enfoque">Enfoque: </label><input type="text" name="enfoque" id="enfoqueText">
+        <div><label for="desenfoque">Desenfoque: </label><input type="text" name="desenfoque" id="desenfoqueText">
+        <button class="button" onclick="generar()">Generar</button></div>
     </div>
     <div id="fotos"></div>
     <script>
@@ -29,12 +29,21 @@
         var galeria = document.getElementById("fotos");
         console.log(document.getElementsByClassName("button").innerHTML);
         for (let i = 1; i<= numFotos; i++){
-	    if(i <= 9) {
-		galeria.innerHTML += '<img src="images/image0'+ i +'.jpg" alt="Foto preciosa">';
-	    }else {
-           	 galeria.innerHTML += '<img src="images/image'+ i +'.jpg" alt="Foto preciosa">';
-       	    }
-	 }
+            if(i <= 9) {
+                galeria.innerHTML += '<img id="img{i}" src="images/image0'+ i +'.jpg"  alt="Foto preciosa">';
+            }else {
+                 galeria.innerHTML += '<img src="images/image'+ i +'.jpg" alt="Foto preciosa">';
+            }
+         }
+
+        function generar(){
+            var tamano = document.getElementById("tamanoText").value;
+            var ancho = document.getElementById("anchoText").value;
+            var color = document.getElementById("colorText").value;
+            var enfoque = document.getElementById("enfoqueText").value;
+            var desenfoque = document.getElementById("desenfoqueText").value;
+        }
     </script>
+
 </body>
 </html>
