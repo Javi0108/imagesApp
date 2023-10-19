@@ -4,7 +4,6 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>UT3-TE1: Administración de servidores web</title>
-
     <style>
         .formDiv {
             display: grid;
@@ -24,5 +23,18 @@
         <div class="desenfoque"><label for="desenfoque">Desenfoque: </label><input type="text" name="desenfoque" class="desenfoqueText">
         <button class="button">Generar</button></div>
     </div>
+    <div id="fotos"></div>
+    <script>
+        var numFotos = 20;
+        var galeria = document.getElementById("fotos");
+        console.log(document.getElementsByClassName("button").innerHTML);
+        for (let i = 1; i<= numFotos; i++){
+	    if(i <= 9) {
+		galeria.innerHTML += '<img src="images/image0'+ i +'.jpg" alt="Foto preciosa">';
+	    }else {
+           	 galeria.innerHTML += '<img src="images/image'+ i +'.jpg" alt="Foto preciosa">';
+       	    }
+	 }
+    </script>
 </body>
 </html>
