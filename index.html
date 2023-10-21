@@ -4,46 +4,19 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>UT3-TE1: Administración de servidores web</title>
-    <style>
-        .formDiv {
-            display: grid;
-            grid-template-columns: 3;
-            grid-template-rows: 5;
-        }
-
-    </style>
+    <script src="js/app.js"></script>
+    <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
-    <h2>Nginx + ngx_small_light</h2>
     <div class="formDiv">
-        <div><label for="tamano">Tamaño: </label><input type="text" name="tamano" id="tamanoText">
-        <div><label for="ancho">Ancho del borde: </label><input type="text" name="ancho" id="anchoText">
-        <div><label for="color">Color del borde: </label><input type="text" name="color" id="colorText">
-        <div><label for="enfoque">Enfoque: </label><input type="text" name="enfoque" id="enfoqueText">
-        <div><label for="desenfoque">Desenfoque: </label><input type="text" name="desenfoque" id="desenfoqueText">
-        <button class="button" onclick="generar()">Generar</button></div>
+        <h2>Nginx + ngx_small_light</h2>
+        <label id="tamano" for="tamano">Tamaño</label><input type="text" name="tamano" value="50" id="tamanoText">
+        <label id="ancho" for="ancho">Ancho del borde</label><input type="text" name="ancho" id="anchoText">
+        <label id="color" for="color">Color del borde</label><input type="text" name="color" id="colorText">
+        <label id="enfoque" for="enfoque">Enfoque</label><input type="text" name="enfoque" id="enfoqueText">
+        <label id="desenfoque" for="desenfoque">Desenfoque</label><input type="text" name="desenfoque" id="desenfoqueText">
+        <button class="button" onclick="generar()">Generar</button>
     </div>
     <div id="fotos"></div>
-    <script>
-        var numFotos = 20;
-        var galeria = document.getElementById("fotos");
-        console.log(document.getElementsByClassName("button").innerHTML);
-        for (let i = 1; i<= numFotos; i++){
-            if(i <= 9) {
-                galeria.innerHTML += '<img id="img{i}" src="images/image0'+ i +'.jpg"  alt="Foto preciosa">';
-            }else {
-                 galeria.innerHTML += '<img src="images/image'+ i +'.jpg" alt="Foto preciosa">';
-            }
-         }
-
-        function generar(){
-            var tamano = document.getElementById("tamanoText").value;
-            var ancho = document.getElementById("anchoText").value;
-            var color = document.getElementById("colorText").value;
-            var enfoque = document.getElementById("enfoqueText").value;
-            var desenfoque = document.getElementById("desenfoqueText").value;
-        }
-    </script>
-
 </body>
 </html>
