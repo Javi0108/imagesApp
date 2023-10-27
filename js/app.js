@@ -6,7 +6,7 @@ function generar(){
     var desenfoque = document.getElementById("desenfoqueText").value;
     var numFotos = 20;
     var galeria = document.getElementById("fotos");
-
+	
     if(galeria.innerHTML != ""){
         galeria.innerHTML = "";
         generarImg();
@@ -17,18 +17,11 @@ function generar(){
     function generarImg() {
         for (let i = 1; i<= numFotos; i++){
             if(i <= 9) {
-                galeria.innerHTML += '<img id="img'+i+'" src="images/image0'+ i +'.jpg" alt="Foto">';
-                document.getElementById("img"+i).style = "margin: 5px; \
-                                                          width: "+tamano+"px; \
-                                                          border: "+ancho+"px solid #"+color+";\
-                                                          filter: blur("+desenfoque+"px);";
-            }else {
-                galeria.innerHTML += '<img id="img'+i+'" src="images/image'+ i +'.jpg" alt="Foto ">';
-                document.getElementById("img"+i).style = "margin: 5px; \
-                                                          width: "+tamano+"px; \
-                                                          border: "+ancho+"px solid #"+color+"; \
-                                                          filter: blur("+desenfoque+"px);";
+                galeria.innerHTML += '<img id="img'+i+'" src="images/image0'+ i +'.jpg?dw='+tamano+'&bw='+ancho+'&bh='+ancho+'&bc='+color+'&sharpen='+enfoque+'&blur='+desenfoque+'" alt="Foto">'
+	    }else {
+                galeria.innerHTML += '<img id="img'+i+'" src="images/image'+ i +'.jpg?dw='+tamano+'&bw='+ancho+'&bh='+ancho+'&bc='+color+'&sharpen='+enfoque+'&blur='+desenfoque+'" alt="Foto ">';
             }
+	   document.getElementById("img"+i).style = "margin: 5px;";
         }
     }
 }
